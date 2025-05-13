@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kazandrio-app", "kazandrio-app\kazandrio-app.csproj", "{0148C51B-BB26-4635-81B1-EDA5C84ABBAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0148C51B-BB26-4635-81B1-EDA5C84ABBAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0148C51B-BB26-4635-81B1-EDA5C84ABBAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0148C51B-BB26-4635-81B1-EDA5C84ABBAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0148C51B-BB26-4635-81B1-EDA5C84ABBAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09991B29-32EB-4B07-AED5-F50A90FC0927}
+	EndGlobalSection
+EndGlobal
