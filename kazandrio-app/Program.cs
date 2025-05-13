@@ -1,21 +1,20 @@
-﻿using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
+﻿using System.Diagnostics;
 using OpenQA.Selenium;
-using System;
-using System.Diagnostics;
-using static OpenQA.Selenium.BiDi.Modules.Script.RealmInfo;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Interactions;
 
 Console.WriteLine("Appium testi başlatılıyor...");
 
 var options = new AppiumOptions();
 options.PlatformName = "Android";
 options.DeviceName = GetConnectedDeviceId(); // Otomatik alınıyor
-options.PlatformVersion = "10.0";
+options.PlatformVersion = "12";
 options.AutomationName = "UiAutomator2";
 options.AddAdditionalAppiumOption("appPackage", "com.pepsico.kazandirio");
 options.AddAdditionalAppiumOption("appActivity", ".MainActivity");
 options.AddAdditionalAppiumOption("noReset", true);
-options.AddAdditionalAppiumOption("androidHome", "C:\\Android\\sdk");
+//options.AddAdditionalAppiumOption("androidHome", "C:\\Android\\sdk");
 
 
 AndroidDriver driver = new AndroidDriver(
@@ -23,10 +22,25 @@ AndroidDriver driver = new AndroidDriver(
     options
 );
 
-IWebElement okutKazanButton = driver.FindElement(By.Id("com.pepsico.kazandirio:id/navigation_bar_item_labels_group"));
-okutKazanButton.Click();
+//IWebElement okutKazanButton = driver.FindElement(By.Id("com.pepsico.kazandirio:id/navigation_bar_item_labels_group"));
+//okutKazanButton.Click();
+
+//var okutKazanButton = driver.FindElement(By.XPath("//*[contains(@text, 'Okut Kazan')]"));
+//okutKazanButton.Click();
+
+int x = (507 + 573) / 2; // X koordinatı
+int y = (2224 + 2272) / 2; // Y koordinatı
+
+Actions actions = new Actions(driver);
+actions.MoveByOffset(x, y).Click().Perform();
+
+//TouchAction touch = new TouchAction(driver);
+//touch.Tap(360 + 180, 2202 + 35).Perform(); // bounds: [360,2202][720,2272]
+
 
 IWebElement toolbarTitle = driver.FindElement(By.Id("com.pepsico.kazandirio:id/text_view_toolbar_title"));
+
+
 toolbarTitle.Click();
 
 IWebElement passwordField = driver.FindElement(By.Id("com.pepsico.kazandirio:id/text_view_manual_code_write_enter_code"));
